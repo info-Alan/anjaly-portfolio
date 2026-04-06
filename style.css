@@ -1164,7 +1164,7 @@ a.cd-item:hover { border-color: var(--clr-a1); background: rgba(124,58,237,.08);
   .nav-link { font-size: 1rem; padding: 0.65rem 1rem; border-radius: var(--radius-sm); }
   .menu-toggle { display: flex; }
 
-  .floating-tag { display: none; }
+  .floating-tag { padding: 0.3rem 0.6rem; font-size: 0.7rem; }
   .timeline-item { grid-template-columns: 28px 1fr; gap: 0 1rem; }
   .portfolio-grid { columns: 1; }
 
