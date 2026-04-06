@@ -1106,13 +1106,32 @@ a.cd-item:hover { border-color: var(--clr-a1); background: rgba(124,58,237,.08);
 ══════════════════════════════ */
 @media (max-width: 1024px) {
   #hero {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column-reverse;
     text-align: center;
-    padding-top: calc(var(--nav-h) + 3rem);
+    padding-top: calc(var(--nav-h) + 1rem);
     padding-bottom: 5rem;
     min-height: auto;
+    align-items: center;
   }
-  .hero-visual { order: -1; }
+  .hero-content {
+    z-index: 5;
+    background: rgba(9, 9, 15, 0.65);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(124, 58, 237, 0.25);
+    border-radius: 2rem;
+    padding: 2.5rem 1.5rem;
+    margin-top: -6rem;
+    width: 95%;
+    max-width: 600px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  }
+  .hero-visual { 
+    width: 100%; 
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+  }
   .hero-badge, .hero-cta, .hero-stats { justify-content: center; }
   .hero-desc { margin-left: auto; margin-right: auto; }
 
@@ -1262,4 +1281,33 @@ a.cd-item:hover { border-color: var(--clr-a1); background: rgba(124,58,237,.08);
   .wa-btn { bottom: 1.5rem; left: 1.5rem; }
   .mail-btn { bottom: 5rem; left: 1.5rem; }
   .scroll-top { bottom: 1.5rem; right: 1.5rem; width: 44px; height: 44px; }
+}
+
+.image-status-badge { display: none; }
+
+@media (max-width: 1024px) {
+  .hero-badge { display: none !important; }
+  .image-status-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(9, 9, 15, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(124, 58, 237, 0.4);
+    padding: 0.5rem 0.9rem;
+    border-radius: 99px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--clr-fg);
+    z-index: 10;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    animation: float-small 4s ease-in-out infinite;
+  }
+}
+@keyframes float-small {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
 }
